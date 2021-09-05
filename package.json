@@ -1,0 +1,15 @@
+{
+  "name": "projet_3",
+  "version": "0.1.1",
+  "description": "projet_3",
+  "main": "index.js",
+  "dependencies": {
+    "dart-sass": "^1.25.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile": "sass --watch source/stylesheets/index.scss:built/stylesheets/index.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

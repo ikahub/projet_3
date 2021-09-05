@@ -1,0 +1,140 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+body ol, body ul {
+  list-style: none;
+  counter-increment: comptenormal;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h4 {
+  font-family: "Shrikhand", cursive;
+  text-decoration: none;
+}
+
+h2, h3, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.header-location {
+  background-color: #4b48488c;
+  font-size: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.header-location i {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.header-location p {
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  color: #4b48488c;
+}
+
+.presentation {
+  text-align: center;
+  background-color: #80808038;
+  padding: 1rem 1rem;
+}
+.presentation h2 {
+  margin: 0;
+  padding: 1rem;
+}
+.presentation p {
+  padding: 1rem;
+  color: #4b48488c;
+}
+.presentation .presentation-button {
+  padding: 0.5rem 0.5rem;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: 1px solid #80808038;
+  border-radius: 40px;
+  color: #ffffff;
+}
+
+.fonctionnement {
+  margin: 1rem;
+}
+.fonctionnement .list-item {
+  counter-increment: comptenormal 1;
+  content: counter(comptenormal) " ";
+  margin: 1rem 0;
+  width: 100%;
+  border: 1px solid #80808038;
+  border-radius: 10px;
+}
+.fonctionnement .list-item p {
+  width: 100%;
+  text-align: center;
+}
+.fonctionnement .list-item i {
+  padding: 1rem 0;
+  height: 2rem;
+}
+
+.restaurants {
+  margin: 0 1rem;
+  position: relative;
+}
+.restaurants .new {
+  position: absolute;
+  right: 1rem;
+}
+.restaurants .restaurant {
+  overflow: hidden;
+  margin: 1rem 0;
+  border: 1px solid #80808038;
+  border-radius: 10px;
+}
+.restaurants .restaurant img {
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.coeur {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.coeur h3, .coeur p {
+  margin: 0;
+}
+
+footer {
+  font-size: 0.7rem;
+  padding-left: 1rem;
+  line-height: 1rem;
+  background-color: #252525c4;
+  display: flex;
+  flex-direction: column;
+}
+footer h4 {
+  color: #ffffff;
+}
+
+.footer-link {
+  display: flex;
+}
+.footer-link i {
+  width: 1rem;
+  height: 1rem;
+  padding-right: 0.2rem;
+}
+.footer-link a {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=index.css.map */

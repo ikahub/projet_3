@@ -5,14 +5,13 @@ $bg-primary: #ffffff;
 $bg-secondary: #4b48488c;
 $border-color: #80808038;
 $footer: #252525c4;
+$new-bg: rgb(153, 226, 208);
+$new-font: rgb(19, 146, 115);
+$gradient: linear-gradient(to top right,$secondary, $primary);
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    ol, ul{
-        list-style: none;
-        counter-increment: comptenormal;
-    }
 }
 a {
     text-decoration: none;
@@ -66,30 +65,62 @@ h2, h3, h5, h6 {
     }
 }
 .fonctionnement {
-    margin: 1rem;
-    .list-item {
-        counter-increment: comptenormal 1;
-        content: counter(comptenormal) " ";
-        margin: 1rem 0;
+    padding: 1rem 0;
+    height: 25rem;
+    .fonctionnement-title {
+        margin-left: 1rem;
+    }
+    .fonctionnement-list{
         width: 100%;
-        border: 1px solid $border-color;
-        border-radius: 10px;
-        p {
-            width: 100%;
+        position: absolute;
+        counter-reset: comptage;
+        .list-item {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            counter-increment: comptage;
+            margin: 1rem 0;
+            height: 3rem;
+            border: 1px solid $border-color;
+            border-radius: 10px;
+            p i {
+                height: 2rem;
+                padding: 0 2rem;
+                color: $bg-secondary;
+            }
+        }
+        .list-item::before {
+            position: relative;
+            top: 50%;
+            left: -1%;
+            transform: translate(-50%, -50%);
+            content: counter(comptage);
+            padding: 0.5rem 0.5rem;
+            height: 1rem;
+            width: 1rem;
             text-align: center;
-        }
-        i {
-            padding: 1rem 0;
-            height: 2rem;
-        }
+            vertical-align: middle;
+            background: $primary;
+            border-radius: 50%;
+            color: white;		
+        }       
     }
 }
 .restaurants {
-    margin: 0 1rem;
+    background-color: #f2f2f2;
+    padding: 1rem 1rem;
     position: relative;
     .new {
         position: absolute;
         right: 1rem;
+        color: $new-font;
+        background-color: $new-bg;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        border-radius: 3px;
+        font-size: 0.7rem;
+        font-weight: bold;
     }
     .restaurant {
         overflow: hidden;
@@ -102,15 +133,23 @@ h2, h3, h5, h6 {
         height: 5rem;
         object-fit: cover;
     }
-}
-.coeur {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    h3, p {
+    .coeur {
         margin: 0;
-    }
+        display: flex;
+        justify-content: space-between;
+        h3, p {
+            margin: 0;
+        }
+        i {
+            color: white;
+            border: 1px solid black;
+        }
+        i:hover {
+            color: red;
+        }
+    } 
 }
+
 footer {
     font-size: 0.7rem;
     padding-left: 1rem;
@@ -132,4 +171,28 @@ footer {
     a {
         color: $bg-primary;
     }
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    i {
+        height: 2rem;
+        width: 2rem;
+        padding: 2rem 0;
+        font-size: 1rem;
+    }
+    h1 {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.presentation-button {
+    padding: 0.5rem 0.5rem;
+    background: linear-gradient(to bottom right,$secondary, $primary);
+    border: 1px solid $border-color;
+    border-radius: 40px;
+    color: $bg-primary;
 }

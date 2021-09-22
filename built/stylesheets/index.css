@@ -1,6 +1,17 @@
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  position: relative;
+}
+body .loading {
+  background: white;
+  animation: animLoader 2s ease-in-out forwards;
+  position: absolute;
+  width: 100%;
+  height: 100rem;
+  z-index: 50;
+  text-align: center;
+  font-size: 10rem;
 }
 
 a {
@@ -18,12 +29,14 @@ h2, h3, h5, h6 {
 }
 
 .header-title {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
 .header-location {
-  background-color: #4b48488c;
+  color: #313131;
+  font-weight: bold;
+  background-color: #eaeaea;
   font-size: 1rem;
   padding: 1rem;
   display: flex;
@@ -32,17 +45,18 @@ h2, h3, h5, h6 {
 .header-location i {
   width: 0.8rem;
   height: 0.8rem;
+  color: #313131;
 }
 .header-location p {
   font-size: 0.8rem;
   padding: 0 1rem;
-  color: #4b48488c;
 }
 
 .presentation {
   text-align: center;
   background-color: #80808038;
   padding: 1rem 1rem;
+  padding-bottom: 3rem;
 }
 .presentation h2 {
   margin: 0;
@@ -53,55 +67,62 @@ h2, h3, h5, h6 {
   color: #4b48488c;
 }
 .presentation .presentation-button {
-  padding: 0.5rem 0.5rem;
+  font-size: 0.8rem;
+  margin: 0;
+  width: 60%;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  border: 1px solid #80808038;
+  border: none;
   border-radius: 40px;
   color: #ffffff;
+  box-shadow: 1px 4px 15px #8b8b8b;
 }
 
 .fonctionnement {
   padding: 1rem 0;
-  height: 25rem;
+  height: 23rem;
 }
-.fonctionnement .fonctionnement-title {
+.fonctionnement-title {
   margin-left: 1rem;
 }
-.fonctionnement .fonctionnement-list {
+.fonctionnement-list {
+  box-sizing: border-box;
   width: 100%;
-  position: absolute;
-  counter-reset: comptage;
-}
-.fonctionnement .fonctionnement-list .list-item {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
   list-style-type: none;
-  counter-increment: comptage;
-  margin: 1rem 0;
-  height: 3rem;
-  border: 1px solid #80808038;
-  border-radius: 10px;
 }
-.fonctionnement .fonctionnement-list .list-item p i {
+.fonctionnement-list .list-item {
+  padding: 1rem 0;
+  box-shadow: 1px 2px 10px #e4e4e4;
+  position: relative;
+  width: 95%;
+  margin: 1.5rem 0;
+  height: 3rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+}
+.fonctionnement-list .list-item p i {
   height: 2rem;
   padding: 0 2rem;
   color: #4b48488c;
 }
-.fonctionnement .fonctionnement-list .list-item::before {
-  position: relative;
+.fonctionnement-list .list-item-number {
+  position: absolute;
   top: 50%;
-  left: -1%;
+  left: 0;
   transform: translate(-50%, -50%);
-  content: counter(comptage);
-  padding: 0.5rem 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  text-align: center;
-  vertical-align: middle;
-  background: #9356DC;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #9356DC;
   border-radius: 50%;
-  color: white;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+.fonctionnement-list .list-item:hover, .fonctionnement-list .list-item:hover i {
+  color: #9356DC;
+  cursor: pointer;
+  background-color: #f5edff;
 }
 
 .restaurants {
@@ -121,30 +142,72 @@ h2, h3, h5, h6 {
   font-weight: bold;
 }
 .restaurants .restaurant {
+  width: 0;
+  opacity: 0;
+  animation: animRestau 1s linear forwards 1.5s;
   overflow: hidden;
   margin: 1rem 0;
-  border: 1px solid #80808038;
+  border: none;
   border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 10px #e0e0e0;
+}
+.restaurants .restaurant p {
+  margin: 0rem 1rem;
+  margin-bottom: 0.5rem;
 }
 .restaurants .restaurant img {
   width: 100%;
   height: 5rem;
   object-fit: cover;
 }
-.restaurants .coeur {
-  margin: 0;
+.restaurants .dad-coeur {
+  height: 2rem;
   display: flex;
   justify-content: space-between;
 }
-.restaurants .coeur h3, .restaurants .coeur p {
+.restaurants .dad-coeur .child-coeur {
+  width: 90%;
+  margin: 0 1rem;
+  height: 2rem;
+}
+.restaurants .dad-coeur .child-coeur a h3 {
   margin: 0;
 }
-.restaurants .coeur i {
-  color: white;
-  border: 1px solid black;
+.restaurants .dad-coeur .toti {
+  position: relative;
+  height: 2rem;
+  z-index: 0;
+  width: 10%;
 }
-.restaurants .coeur i:hover {
-  color: red;
+.restaurants .dad-coeur .heart-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+.restaurants .dad-coeur .tito {
+  max-height: 0;
+  transition: max-height 0.5s linear;
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.restaurants .dad-coeur .tito .heart-4 {
+  color: #c055c0;
+  position: relative;
+  transform: translateY(-100%);
+  transition: transform 0.5s linear;
+  font-size: 1.5rem;
+}
+.restaurants .dad-coeur .toti:hover .tito {
+  max-height: 1.5rem;
+}
+.restaurants .dad-coeur .toti:hover .heart-4 {
+  transform: translateY(0);
 }
 
 footer {
@@ -158,16 +221,16 @@ footer {
 footer h4 {
   color: #ffffff;
 }
-
-.footer-link {
+footer .footer-link {
   display: flex;
 }
-.footer-link i {
+footer .footer-link i {
   width: 1rem;
   height: 1rem;
   padding-right: 0.2rem;
+  color: white;
 }
-.footer-link a {
+footer .footer-link a {
   color: #ffffff;
 }
 
@@ -175,6 +238,10 @@ footer h4 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.header-menu a {
+  color: black;
+  margin-left: 1rem;
 }
 .header-menu i {
   height: 2rem;
@@ -187,12 +254,162 @@ footer h4 {
   width: 100%;
 }
 
-.presentation-button {
-  padding: 0.5rem 0.5rem;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+.main {
+  background-color: #f6f6f6;
+}
+.main .menu .menu-entete {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.main .menu .menu-entete img {
+  object-fit: cover;
+  width: 100%;
+  height: 10rem;
+  margin: 0;
+}
+.main .menu .menu-entete .menu-title-coeur {
+  border-top-left-radius: 20px;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .menu .menu-entete .menu-title-coeur h1 {
+  padding: 0 1rem;
+}
+.main .menu .menu-entete .menu-title-coeur i {
+  font-size: 1.2rem;
+  height: 3rem;
+  width: 1.2rem;
+  padding: 1rem;
+}
+.main .menu .titre-underline {
+  margin-left: 1rem;
+  display: block;
+  height: 0rem;
+  width: 65px;
+  border-top: 4px solid #99E2D0;
+}
+.main .menu .menu-section-titre {
+  color: #313131;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+}
+.main .menu .menu-item {
+  opacity: 0;
+  animation: animMenu 1s linear forwards;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 5%;
+  position: relative;
+  width: 90%;
+  height: 8rem;
   border: 1px solid #80808038;
-  border-radius: 40px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .menu .menu-item-content {
+  width: 100%;
+  transition: width 1s;
+}
+.main .menu .menu-item-content h2 {
+  display: block;
+  padding: 0 1rem;
+}
+.main .menu .menu-item-content .menu-comm-prix-flex {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.main .menu .menu-item-content .menu-comm-prix-flex p {
+  margin: 0;
+}
+.main .menu .menu-item-icone {
+  overflow: hidden;
+  background-color: #99E2D0;
+  width: 0;
+  height: 100%;
+  transition: width 1s;
+  position: relative;
+}
+.main .menu .menu-item-icone i {
   color: #ffffff;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.main .menu .menu-item:hover .menu-item-content {
+  width: calc(100%-8rem);
+}
+.main .menu .menu-item:hover .menu-item-icone {
+  width: 8rem;
+}
+
+.presentation-button {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border-radius: 40px;
+  margin: 3rem 33%;
+  color: white;
+  width: 33%;
+  padding: 1rem 0;
+  font-weight: bold;
+  font-size: 0.5rem;
+  border: none;
+}
+
+.body-menu1 p, .prix {
+  color: #353535;
+}
+
+.prix-p {
+  vertical-align: bottom;
+}
+
+@keyframes animMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animRestau {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 50%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+@keyframes animLoader {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

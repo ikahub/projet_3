@@ -296,6 +296,18 @@ footer {
                 }
             }
         }
+        .div-entrees {
+            opacity: 0;
+            animation: animMenu 1.5s linear forwards 0s;
+        }
+        .div-plats {
+            opacity: 0;
+            animation: animMenu 1.5s linear forwards 1.5s;
+        }
+        .div-desserts {
+            opacity: 0;
+            animation: animMenu 1.5s linear forwards 2.5s;
+        }
         .titre-underline {
             margin-left: 1rem;
             display: block;
@@ -308,15 +320,17 @@ footer {
             padding: 0 1rem;
             font-size: 1.5rem;
         }
-        .menu-item {
+        .div-plat {
             opacity: 0;
-            animation: animMenu 1s linear forwards;
+            animation: animMenu 2s linear forwards;
+            animation-delay: 1s;
+        }
+        .menu-item {
             background-color: $bg-primary;
             overflow: hidden;
             margin:5%;
             position: relative;
             width: 90%;
-            height: 8rem;
             border: 1px solid $border-color;
             border-radius: 25px;
             display: flex;
@@ -341,9 +355,11 @@ footer {
                 overflow: hidden;
                 background-color: $tertiary;
                 width: 0;
-                height: 100%;
                 transition: width 1s;
-                position: relative;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
                 i {
                     color: $bg-primary;
                     font-size: 2rem;
@@ -356,10 +372,10 @@ footer {
             }
             &:hover {
                 .menu-item-content {
-                    width: calc(100%-8rem);
+                    width: calc(100% - 5rem);
                 }
                 .menu-item-icone {
-                    width: 8rem;
+                    width: 5rem;
                 }
             }
         }

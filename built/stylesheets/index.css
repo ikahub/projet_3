@@ -288,6 +288,18 @@ footer .footer-link a {
   width: 1.2rem;
   padding: 1rem;
 }
+.main .menu .div-entrees {
+  opacity: 0;
+  animation: animMenu 1.5s linear forwards 0s;
+}
+.main .menu .div-plats {
+  opacity: 0;
+  animation: animMenu 1.5s linear forwards 1.5s;
+}
+.main .menu .div-desserts {
+  opacity: 0;
+  animation: animMenu 1.5s linear forwards 2.5s;
+}
 .main .menu .titre-underline {
   margin-left: 1rem;
   display: block;
@@ -300,15 +312,17 @@ footer .footer-link a {
   padding: 0 1rem;
   font-size: 1.5rem;
 }
-.main .menu .menu-item {
+.main .menu .div-plat {
   opacity: 0;
-  animation: animMenu 1s linear forwards;
+  animation: animMenu 2s linear forwards;
+  animation-delay: 1s;
+}
+.main .menu .menu-item {
   background-color: #ffffff;
   overflow: hidden;
   margin: 5%;
   position: relative;
   width: 90%;
-  height: 8rem;
   border: 1px solid #80808038;
   border-radius: 25px;
   display: flex;
@@ -334,9 +348,11 @@ footer .footer-link a {
   overflow: hidden;
   background-color: #99E2D0;
   width: 0;
-  height: 100%;
   transition: width 1s;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 .main .menu .menu-item-icone i {
   color: #ffffff;
@@ -348,10 +364,10 @@ footer .footer-link a {
   cursor: pointer;
 }
 .main .menu .menu-item:hover .menu-item-content {
-  width: calc(100%-8rem);
+  width: calc(100% - 5rem);
 }
 .main .menu .menu-item:hover .menu-item-icone {
-  width: 8rem;
+  width: 5rem;
 }
 
 .presentation-button {

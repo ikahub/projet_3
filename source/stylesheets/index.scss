@@ -8,7 +8,6 @@ $footer: #252525c4;
 $new-bg: rgb(153, 226, 208);
 $new-font: rgb(19, 146, 115);
 $gradient: linear-gradient(to top right, $secondary, $primary);
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -24,21 +23,34 @@ body {
         font-size: 10rem;
     }
 }
-a {
+
+a,
+a:visited,
+a:hover,
+a:focus {
     text-decoration: none;
+    color: black;
 }
-h1, h4 {
+
+h1,
+h4 {
     font-family: 'Shrikhand', cursive;
     text-decoration: none;
 }
-h2, h3, h5, h6 {
+
+h2,
+h3,
+h5,
+h6 {
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
+
 .header-title {
     font-size: 3rem;
     text-align: center;
 }
+
 .header-location {
     color: #313131;
     font-weight: bold;
@@ -57,6 +69,7 @@ h2, h3, h5, h6 {
         padding: 0 1rem;
     }
 }
+
 .presentation {
     text-align: center;
     background-color: $border-color;
@@ -74,20 +87,21 @@ h2, h3, h5, h6 {
         font-size: 0.8rem;
         margin: 0;
         width: 60%;
-        background: linear-gradient(to bottom right,$secondary, $primary);
+        background: linear-gradient(to bottom right, $secondary, $primary);
         border: none;
         border-radius: 40px;
         color: $bg-primary;
         box-shadow: 1px 4px 15px rgb(139, 139, 139);
     }
 }
+
 .fonctionnement {
     padding: 1rem 0;
     height: 23rem;
     &-title {
         margin-left: 1rem;
     }
-    &-list{
+    &-list {
         box-sizing: border-box;
         width: 100%;
         list-style-type: none;
@@ -120,12 +134,12 @@ h2, h3, h5, h6 {
                 color: $bg-primary;
                 font-size: 0.8rem;
             }
-            &:hover, &:hover i {
+            &:hover,
+            &:hover i {
                 color: #9356DC;
                 cursor: pointer;
                 background-color: rgb(245, 237, 255);
             }
-            
         }
     }
 }
@@ -146,7 +160,7 @@ h2, h3, h5, h6 {
         font-weight: bold;
     }
     .restaurant {
-        width:0;
+        width: 0;
         opacity: 0;
         animation: animRestau 1s linear forwards 1.5s;
         overflow: hidden;
@@ -162,7 +176,7 @@ h2, h3, h5, h6 {
     }
     .restaurant img {
         width: 100%;
-        height: 5rem;
+        height: 15rem;
         object-fit: cover;
     }
     .dad-coeur {
@@ -176,22 +190,21 @@ h2, h3, h5, h6 {
             a {
                 h3 {
                     margin: 0;
-                } 
+                }
             }
         }
         .toti {
             position: relative;
-            height:2rem;
-            z-index:0;
+            height: 2rem;
+            z-index: 0;
             width: 10%;
         }
         .heart-3 {
             position: absolute;
             bottom: 0;
-            left:0;
+            left: 0;
             font-size: 1.5rem;
-            z-index:1;
-            
+            z-index: 1;
         }
         .tito {
             max-height: 0;
@@ -209,11 +222,9 @@ h2, h3, h5, h6 {
                 font-size: 1.5rem;
             }
         }
-
         .toti:hover .tito {
             max-height: 1.5rem;
         }
-          
         .toti:hover .heart-4 {
             transform: translateY(0);
         }
@@ -243,6 +254,7 @@ footer {
         }
     }
 }
+
 .header-menu {
     display: flex;
     flex-direction: row;
@@ -262,6 +274,7 @@ footer {
         width: 100%;
     }
 }
+
 .main {
     background-color: #f6f6f6;
     .menu {
@@ -328,7 +341,7 @@ footer {
         .menu-item {
             background-color: $bg-primary;
             overflow: hidden;
-            margin:5%;
+            margin: 5%;
             position: relative;
             width: 90%;
             border: 1px solid $border-color;
@@ -341,6 +354,7 @@ footer {
                 h2 {
                     display: block;
                     padding: 0 1rem;
+                    margin: 0;
                 }
                 .menu-comm-prix-flex {
                     padding: 1rem 1rem;
@@ -366,7 +380,7 @@ footer {
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%,-50%);
+                    transform: translate(-50%, -50%);
                     cursor: pointer;
                 }
             }
@@ -383,7 +397,7 @@ footer {
 }
 
 .presentation-button {
-    background: linear-gradient(to bottom right,$secondary, $primary);
+    background: linear-gradient(to bottom right, $secondary, $primary);
     border-radius: 40px;
     margin: 3rem 33%;
     color: white;
@@ -394,7 +408,8 @@ footer {
     border: none;
 }
 
-.body-menu1 p, .prix {
+.body-menu1 p,
+.prix {
     color: rgb(53, 53, 53);
 }
 
